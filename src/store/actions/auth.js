@@ -54,8 +54,7 @@ export const auth = (email, password) => {
 			url: "/oauth/token",
 			data: bodyFormData,
 			config: { headers: { accept: "application/json" } },
-		})
-			.then((response) => {
+		}).then((response) => {
 				var roles = [];
 				response.data.authorities.map(el => roles.push(el.authority));	
 				if (!roles.includes("ROLE_SELLER") || roles.length > 1) {	
@@ -69,9 +68,9 @@ export const auth = (email, password) => {
                 localStorage.setItem('sellerId',email);
 				dispatch(authSuccess(email, response.data.access_token,response.data.authorities));
 				dispatch(checkAuthTimeout(response.data.expires_in));
-			})
-			.catch((error) => {
-				console.log(error.response.data.error);
+			}).catch((error) => {
+				if (error.response) {
+					console.log(error.response.data.error);
 				console.log(error.response.data.error_description);
 				let errorMessage = "";
 				if (!error.response.data.error_description) {
@@ -80,6 +79,7 @@ export const auth = (email, password) => {
 					errorMessage = error.response.data.error_description;
 				}
 				dispatch(authFail(errorMessage));
+				}
 			});
 	};
 };
