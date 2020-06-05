@@ -65,7 +65,11 @@ const SellerProfilePage = (props) => {
         e.preventDefault();
         setLoading(true);
         const headers = {
-			Authorization: 'Bearer' + props.token
+			  Authorization: 'Bearer' + props.token
+        }
+        let transformedImage = image;
+        if (transformedImage && transformedImage.includes('http'))  {
+          transformedImage = null;
         }
         const data = {
             "firstName": firstName,
@@ -73,7 +77,7 @@ const SellerProfilePage = (props) => {
             "companyContact": contact,
             "gst":gst,
             "companyName":companyName,
-            "image": image
+            "image": transformedImage
         }
         axios.patch("seller/profile",data,{ headers: headers })
             .then(response => {

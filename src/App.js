@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';  
 
-
 import './App.css';
 import Navbar from './components/Navbar/Navbar';
 import AuthPage from './pages/AuthPage/AuthPage';
@@ -31,7 +30,7 @@ function App(props) {
       <Route exact path="/" component={AuthPage} />
       <Route exact path="/forgotPassword" component={ForgotPassword} />
       <Route exact path="/changePassword" component={ChangePassword} />
-      <Redirect to="/" />
+      {/* <Redirect to="/" /> */}
     </Switch>
   );
 

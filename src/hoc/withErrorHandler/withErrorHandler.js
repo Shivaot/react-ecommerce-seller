@@ -16,11 +16,13 @@ const withErrorHandler = (WrappedComponent, axios) => {
 			(err) => {
 				if (err.response) {
 					console.log(err.response);
-					
+					setError(err.response.data.message);
+					return err;
 				}
 				console.log(err);
 				
 				setError(err.message);
+				return err;
 			}
 		);
 

@@ -72,6 +72,7 @@ const ProductPage = ({ token ,history}) => {
     if (products.length === 0) {
         return <h3>No Products found</h3>
     }
+    
     return (
     <>
             {showModal ? <Modal show={showModal} modalClosed={modalClosedHandler}>

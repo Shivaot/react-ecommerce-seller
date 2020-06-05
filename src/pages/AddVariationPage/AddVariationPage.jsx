@@ -66,7 +66,7 @@ const AddVariationPage = (props) => {
     };
     var metadata = {};
     const selectChangeHandler = (e) => {
-        console.log(e.target.name,e.target.value);
+        console.log(e.target.name,e.target.value); // Size - small , Fabric-Cotton  
         setSelectValue(e.target.value);
         var obj = {};
         obj[e.target.name] = [e.target.value.toString()];
