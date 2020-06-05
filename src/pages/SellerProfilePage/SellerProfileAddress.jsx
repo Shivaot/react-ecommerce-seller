@@ -84,17 +84,16 @@ const SellerProfileAddress = ({ token }) => {
                     <div className="form-group row">
                            <input className="form-control"  type="text" value={city} onChange={cityChangeHandler} placeholder="City" required style={{marginLeft: "22%"}}/>
                      </div>
-                       <div className="form-group row">
-                                       <input className="form-control"  type="text" value={zipCode} onChange={zipCodeChangeHandler} placeholder="Zip Code" required style={{marginLeft: "22%"}}/>
-                               </div>
-                               <div className="form-group row">
-                                       <input className="form-control"  type="text" value={address} onChange={addressChangeHandler} placeholder="Full Address" required style={{marginLeft: "22%"}}/>
-                               </div>
-                                      
+                    <div className="form-group row">
+                        <input className="form-control"  type="text" value={zipCode} onChange={zipCodeChangeHandler} placeholder="Zip Code" required style={{marginLeft: "22%"}}/>
+                    </div>
+                    <div className="form-group row">
+                        <input className="form-control"  type="text" value={address} onChange={addressChangeHandler} placeholder="Full Address" required style={{marginLeft: "22%"}}/>
+                    </div>                    
                      <div className="form-group row" style={{marginLeft:"30%"}}>
-                           <div className="col-lg-9">
-                                 <button type="Submit" className="btn btn-primary" >Submit</button>
-                           </div>
+                        <div className="col-lg-9">
+                            <button type="Submit" className="btn btn-primary" >Submit</button>
+                        </div>
                     </div>
                     </form>
               </div>

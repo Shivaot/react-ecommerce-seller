@@ -20,7 +20,7 @@ const ChangePassword = () => {
         setConfirmPassword("");
         axios.put('/resetPassword',{"token":token,"pass":password,"cpass":confirmPassword})
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setSuccess(true);
             })
             .catch(error => {

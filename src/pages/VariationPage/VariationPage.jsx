@@ -14,7 +14,7 @@ const VariationPage = (props) => {
         };
         axios.get('product/seller/' + props.match.params.id,{ headers: headers})
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setVariations(response.data.productVarPlusImagesDTO.productVariation);
                 setImages(response.data.productVarPlusImagesDTO.images)
             })

@@ -30,7 +30,7 @@ const AddProductPage = ({ token }) => {
         };
         axios.get("seller/profile/categories",{ headers: headers})
             .then(response => {
-                console.log(response.data)
+                // console.log(response.data)
                 setCategories(response.data)
             })
             .catch(error=> {                
@@ -47,8 +47,8 @@ const AddProductPage = ({ token }) => {
             Authorization: "Bearer" + token,
         };
         const query = `?name=${name}&brand=${brand}&categoryId=${selectedCategory}&isCancellable=${isCancellable}&isReturnable=${isReturnable}&desc=${desc}`
-        console.log("product/add"+query);
-        console.log(headers);
+        // console.log("product/add"+query);
+        // console.log(headers);
         
         axios.post("product/add" + query,{},{ headers: headers})
             .then(response => {
@@ -59,7 +59,7 @@ const AddProductPage = ({ token }) => {
                 setName("");
                 setDesc("");
                 selectedCategory("");
-                console.log(response.data)
+                // console.log(response.data)
             })
             .catch(error=> {
                 if (error.response) {

@@ -81,7 +81,7 @@ const SellerProfilePage = (props) => {
         }
         axios.patch("seller/profile",data,{ headers: headers })
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setError(null);
                 setLoading(false);
             })

@@ -16,7 +16,7 @@ const ProductUpdate = ({ id ,token }) => {
         };
         axios.get('product/view/'+id,{headers: headers})
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setName(response.data.name);
                 setDesc(response.data.description);
             })
@@ -47,7 +47,7 @@ const ProductUpdate = ({ id ,token }) => {
             setDesc("");
             setIsCancellable("Returnable")
             setIsReturnable("Cancellable")
-            console.log(response);
+            // console.log(response);
         })
         .catch(error => {
             setLoading(false);

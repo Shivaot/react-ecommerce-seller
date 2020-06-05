@@ -13,7 +13,7 @@ const VariationUpdate = (props) => {
         };
         axios.get('productVariation/view/'+props.id,{ headers: headers})
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setPrice(response.data.price);
                 setQuantity(response.data.quantityAvailable ? response.data.quantityAvailable : 0 );
             })
@@ -61,7 +61,7 @@ const VariationUpdate = (props) => {
         }
         axios.put('productVariation/update',data,{ headers: headers })
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setSuccess(true);
             })
             .catch(error => {

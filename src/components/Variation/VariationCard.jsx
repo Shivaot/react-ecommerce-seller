@@ -11,16 +11,20 @@ const VariationCard = (props) => {
             a.push(e);
         return a;
     }, []); 
+    
     let primaryContent = transformedImages.filter((arr,i) => i===0).map((image,i) => (
         <img key={i} style={{maxWidth:"50%",maxHeight:"50%",boxShadow:"1px 1px 2px grey"}} src={"http://"+image} alt={`First slide}`} /> 
-    )) 
+    ));
+
     let content = transformedImages.map((image,index) => (
         <img key={index} className="" style={{maxHeight:"20%",maxWidth:"20%"}} src={"http://"+image} alt={`${index} slide}`} /> 
-    ));    
+    ));
+
     const updateClick = (id) => {
         setUpdatedId(id);   
         setShowModal(true);
     }
+    
     const modalClosedHandler = () => setShowModal(false);
 
     return (

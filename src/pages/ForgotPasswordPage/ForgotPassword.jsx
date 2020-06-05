@@ -5,24 +5,24 @@ const ForgotPassword = (props) => {
     const [email,setEmail] = useState("");
     const [error,setError] = useState(null);
 
-   
     const formSubmitHandler = (e) => {
 			e.preventDefault();
 			setEmail("");
 			axios
 				.post("/token", { email: email })
 				.then((response) => {
-					console.log(response.data);
+					// console.log(response.data);
 					props.history.push("/changePassword");
 				})
 				.catch((error) => {
 					console.log(error.response.data.message);
 					setError(error.response.data.message);
 				});
-		};
-		const emailChangeHandler = (e) => {
-			setEmail(e.target.value);
-		};
+	};
+	const emailChangeHandler = (e) => {
+		setEmail(e.target.value);
+    };
+    
     return (
         <div className="container h-100">
         <div className="row h-100">

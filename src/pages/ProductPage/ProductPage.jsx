@@ -22,7 +22,7 @@ const ProductPage = ({ token ,history}) => {
         };
         axios.get('product/view/all',{ headers: headers})
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setProducts(response.data)
                 setLoading(false);
             })
@@ -50,7 +50,7 @@ const ProductPage = ({ token ,history}) => {
         axios.delete('product/delete/' + id,{ headers: headers })
             .then(response => {
                 setDeleted(true);
-                console.log(response);
+                // console.log(response);
             })
             .catch(error => {
                 if (error.response) {

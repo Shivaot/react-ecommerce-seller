@@ -21,7 +21,7 @@ const AddVariationPage = (props) => {
         };
         axios.get('/seller/profile/categories',{ headers: headers})
             .then(response => {
-                console.log(response.data);
+                // console.log(response.data);
                 setCategories(response.data);
             })
             .catch(error => {
@@ -34,7 +34,7 @@ const AddVariationPage = (props) => {
     useEffect(() => {
         categories.filter(category => category.category.id.toString() === catId).forEach(category => {
             if (category.filedValuesSet.length !== 0) {
-                console.log(category.filedValuesSet);
+                // console.log(category.filedValuesSet);
                 setFiledValuesSet(category.filedValuesSet);
             }
         })
@@ -66,7 +66,7 @@ const AddVariationPage = (props) => {
     };
     var metadata = {};
     const selectChangeHandler = (e) => {
-        console.log(e.target.name,e.target.value); // Size - small , Fabric-Cotton  
+        console.log(e.target.name,e.target.value);   
         setSelectValue(e.target.value);
         var obj = {};
         obj[e.target.name] = [e.target.value.toString()];
@@ -89,7 +89,7 @@ const AddVariationPage = (props) => {
         };
         axios.post('productVariation/add',data,{ headers: headers })
             .then(response => {
-                console.log(response);
+                // console.log(response);
                 setSuccess(true);
             })
             .catch(error => {
